@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PARRYTHM — Parry the Beat</title><meta name="theme-color" content="#0b0614"><link rel="icon" href="assets/icon.png">
+<meta name="description" content="PARRYTHM — rhythm action game. Parry the beat.">
+<style>
+@font-face{font-family:Anton;src:url(assets/anton.woff2) format("woff2");font-display:swap}
+@font-face{font-family:BHS;src:url(assets/bhs.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Pret;src:url(assets/pret.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--bg:#0b0614;--ink:#fff;--txt:#e4dbf5;--mute:#b9acd6;--dim:#8a7aa8;--pink:#ff2d7a;--pink2:#ff79b0;--cyan:#29e3ff;--gold:#ffd34d;--glass:rgba(22,10,40,.84);--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.8 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Hiragino Sans","Yu Gothic",system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(70% 45% at 85% 0%,rgba(255,45,122,.32),transparent 70%),radial-gradient(60% 50% at 0% 30%,rgba(139,92,255,.26),transparent 70%),radial-gradient(50% 40% at 50% 100%,rgba(41,227,255,.12),transparent 70%),var(--bg)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:7px 7px;pointer-events:none}
+a{color:var(--pink2)}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 16px;background:linear-gradient(rgba(11,6,20,.96),rgba(11,6,20,.82));backdrop-filter:blur(8px);border-bottom:2px solid var(--pink)}
+.top img{height:42px;display:block}.top .sp{flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:0;cursor:pointer;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(255,255,255,.07);padding:9px 13px;transform:skewX(-10deg);text-decoration:none;display:inline-block}
+.chip>span{display:inline-block;transform:skewX(10deg)}
+.chip.on{background:var(--pink);color:#fff;box-shadow:3px 3px 0 #000}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 80px;position:relative}
+.hero{position:relative;padding:38px 0 26px;min-height:250px;overflow-x:clip;overflow-y:visible}
+.hero .art{position:absolute;right:-30px;top:-6px;height:300px;opacity:.95;pointer-events:none;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);filter:drop-shadow(0 0 30px rgba(255,45,122,.35))}
+.tape{display:inline-block;font:400 14px/1 Anton,BHS,sans-serif;letter-spacing:.1em;color:#2b1a00;background:var(--gold) repeating-linear-gradient(-45deg,transparent 0 6px,rgba(0,0,0,.08) 6px 12px);padding:6px 12px;transform:rotate(-3deg);box-shadow:2px 2px 0 #000}
+.tape.plat{background-color:var(--cyan);color:#04121a;margin-left:6px;transform:rotate(2deg)}
+h1{position:relative;margin:14px 0 4px;font:400 clamp(40px,9vw,66px)/.98 Anton,BHS,sans-serif;font-style:italic;letter-spacing:.01em;color:#fff;text-shadow:3px 3px 0 var(--pink),0 0 24px rgba(255,45,122,.55);max-width:72%}
+.sub{position:relative;font:900 clamp(22px,4.6vw,30px)/1.2 BHS,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;font-synthesis:none;color:var(--gold);text-shadow:2px 2px 0 #000;margin:6px 0 0}
+.eff{display:inline-block;margin-top:14px;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(0,0,0,.4);padding:8px 12px;border-left:3px solid var(--pink)}
+.docs{display:flex;gap:8px;margin:6px 0 22px;flex-wrap:wrap}
+.card{position:relative;background:var(--glass);margin:0 0 14px;padding:20px 20px 18px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:inset 0 0 0 1px var(--line)}
+.card:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--pink),transparent)}
+h2{margin:0 0 10px;font:700 17px/1.4 Pret,system-ui,sans-serif;color:#fff}
+.card p{margin:0;white-space:pre-line}
+.biz{background:rgba(43,26,0,.55);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.biz:before{background:linear-gradient(var(--gold),transparent)}
+.biz dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14.5px}
+.biz dt{color:var(--gold);font-weight:700}.biz dd{margin:0;color:var(--txt)}
+footer{margin-top:30px;padding:22px 0 0;border-top:2px solid var(--pink);display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--dim);font-size:13px}
+footer img{height:34px}
+[hidden]{display:none!important}
+@media(max-width:560px){.hero .art{height:210px;right:-40px;opacity:.55}h1{max-width:100%}.top img{height:34px}}
+
+.land{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 16px;position:relative;overflow:hidden}
+.land .bg{position:fixed;inset:0;z-index:-3;background:url(assets/stage.webp) center/cover;opacity:.32}
+.land .logo{width:min(560px,86vw);filter:drop-shadow(0 0 40px rgba(255,45,122,.45));position:relative;z-index:2}
+.land .cast{position:absolute;bottom:0;height:min(62vh,560px);opacity:.92;z-index:1;-webkit-mask-image:linear-gradient(#000 75%,transparent);mask-image:linear-gradient(#000 75%,transparent)}
+.land .l{left:max(-60px,calc(50% - 560px))}.land .r{right:max(-60px,calc(50% - 560px))}
+.land .tag{font:400 clamp(26px,6vw,44px)/1 Anton,sans-serif;font-style:italic;color:#fff;letter-spacing:.06em;text-shadow:3px 3px 0 var(--pink);margin:18px 0 10px;position:relative;z-index:2}
+.land .line{position:relative;z-index:2;font:700 15px/1.6 Pret,system-ui,sans-serif;color:var(--txt);background:rgba(11,6,20,.7);padding:10px 16px}
+.land .soon{margin-top:22px;position:relative;z-index:2;font-size:18px}
+.land .mail{position:relative;z-index:2;margin-top:22px;font:700 14px/1 Pret,system-ui,sans-serif}
+@media(max-width:700px){.land .cast{height:40vh;opacity:.45}}
+</style></head><body>
+<div class="land"><div class="bg"></div>
+<img class="cast l" src="assets/riff.webp" alt=""><img class="cast r" src="assets/queen.webp" alt="">
+<img class="logo" src="assets/logo.webp" alt="PARRYTHM">
+<div class="tag">PARRY THE BEAT</div>
+<div class="line">리듬 액션 게임<br>リズムアクションゲーム<br>Rhythm action game</div>
+<span class="tape soon">COMING SOON</span>
+<div class="mail"><a href="mailto:support@parrythm.com">support@parrythm.com</a></div>
+</div></body></html>

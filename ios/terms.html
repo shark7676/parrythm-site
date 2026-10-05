@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terms Of Service · PARRYTHM</title><meta name="theme-color" content="#0b0614"><link rel="icon" href="../assets/icon.png">
+<style>
+@font-face{font-family:Anton;src:url(../assets/anton.woff2) format("woff2");font-display:swap}
+@font-face{font-family:BHS;src:url(../assets/bhs.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Pret;src:url(../assets/pret.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--bg:#0b0614;--ink:#fff;--txt:#e4dbf5;--mute:#b9acd6;--dim:#8a7aa8;--pink:#ff2d7a;--pink2:#ff79b0;--cyan:#29e3ff;--gold:#ffd34d;--glass:rgba(22,10,40,.84);--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.8 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Hiragino Sans","Yu Gothic",system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(70% 45% at 85% 0%,rgba(255,45,122,.32),transparent 70%),radial-gradient(60% 50% at 0% 30%,rgba(139,92,255,.26),transparent 70%),radial-gradient(50% 40% at 50% 100%,rgba(41,227,255,.12),transparent 70%),var(--bg)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:7px 7px;pointer-events:none}
+a{color:var(--pink2)}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 16px;background:linear-gradient(rgba(11,6,20,.96),rgba(11,6,20,.82));backdrop-filter:blur(8px);border-bottom:2px solid var(--pink)}
+.top img{height:42px;display:block}.top .sp{flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:0;cursor:pointer;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(255,255,255,.07);padding:9px 13px;transform:skewX(-10deg);text-decoration:none;display:inline-block}
+.chip>span{display:inline-block;transform:skewX(10deg)}
+.chip.on{background:var(--pink);color:#fff;box-shadow:3px 3px 0 #000}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 80px;position:relative}
+.hero{position:relative;padding:38px 0 26px;min-height:250px;overflow-x:clip;overflow-y:visible}
+.hero .art{position:absolute;right:-30px;top:-6px;height:300px;opacity:.95;pointer-events:none;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);filter:drop-shadow(0 0 30px rgba(255,45,122,.35))}
+.tape{display:inline-block;font:400 14px/1 Anton,BHS,sans-serif;letter-spacing:.1em;color:#2b1a00;background:var(--gold) repeating-linear-gradient(-45deg,transparent 0 6px,rgba(0,0,0,.08) 6px 12px);padding:6px 12px;transform:rotate(-3deg);box-shadow:2px 2px 0 #000}
+.tape.plat{background-color:var(--cyan);color:#04121a;margin-left:6px;transform:rotate(2deg)}
+h1{position:relative;margin:14px 0 4px;font:400 clamp(40px,9vw,66px)/.98 Anton,BHS,sans-serif;font-style:italic;letter-spacing:.01em;color:#fff;text-shadow:3px 3px 0 var(--pink),0 0 24px rgba(255,45,122,.55);max-width:72%}
+.sub{position:relative;font:900 clamp(22px,4.6vw,30px)/1.2 BHS,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;font-synthesis:none;color:var(--gold);text-shadow:2px 2px 0 #000;margin:6px 0 0}
+.eff{display:inline-block;margin-top:14px;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(0,0,0,.4);padding:8px 12px;border-left:3px solid var(--pink)}
+.docs{display:flex;gap:8px;margin:6px 0 22px;flex-wrap:wrap}
+.card{position:relative;background:var(--glass);margin:0 0 14px;padding:20px 20px 18px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:inset 0 0 0 1px var(--line)}
+.card:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--pink),transparent)}
+h2{margin:0 0 10px;font:700 17px/1.4 Pret,system-ui,sans-serif;color:#fff}
+.card p{margin:0;white-space:pre-line}
+.biz{background:rgba(43,26,0,.55);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.biz:before{background:linear-gradient(var(--gold),transparent)}
+.biz dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14.5px}
+.biz dt{color:var(--gold);font-weight:700}.biz dd{margin:0;color:var(--txt)}
+footer{margin-top:30px;padding:22px 0 0;border-top:2px solid var(--pink);display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--dim);font-size:13px}
+footer img{height:34px}
+[hidden]{display:none!important}
+@media(max-width:560px){.hero .art{height:210px;right:-40px;opacity:.55}h1{max-width:100%}.top img{height:34px}}
+</style></head><body>
+<div class="top"><a href="../"><img src="../assets/logo.webp" alt="PARRYTHM"></a><span class="sp"></span><div class="chips"><button class="chip on" data-lang="ko"><span>한국어</span></button><button class="chip" data-lang="ja"><span>日本語</span></button><button class="chip" data-lang="en"><span>English</span></button></div></div>
+<div class="wrap">
+<div class="hero"><img class="art" src="../assets/riff.webp" alt="">
+<span class="tape">PARRYTHM</span><span class="tape plat">iOS</span>
+<h1>TERMS OF SERVICE</h1><p class="sub" data-t="sub">이용약관</p><span class="eff" data-t="eff">시행일: 2026.10.05</span></div>
+<div class="docs"><span class="chip on"><span data-t="me">이용약관</span></span><a class="chip" data-href="privacy.html" href="privacy.html"><span data-t="other">개인정보 처리방침</span></a></div>
+<div data-body="ko" lang="ko">
+<section class="card"><h2>1. 목적과 동의</h2><p>이 약관은 주식회사 레이픽(이하 &quot;회사&quot;)이 제공하는 리듬 액션 게임 PARRYTHM(이하 &quot;게임&quot;)의 이용 조건을 정합니다. 게임을 내려받거나 이용하면 이 약관에 동의한 것으로 봅니다. 동의하지 않으면 이용을 멈추고 게임을 삭제할 수 있습니다.
+이 약관과 함께 Apple의 표준 최종 사용자 사용권 계약(EULA)이 적용됩니다.</p></section>
+<section class="card"><h2>2. 이용 연령</h2><p>게임은 만 12세 이상을 대상으로 합니다. 미성년자는 결제 등 중요한 행동을 하기 전에 법정대리인(부모님 등)의 동의를 받아야 합니다.</p></section>
+<section class="card"><h2>3. 계정</h2><p>• 게스트로 바로 시작할 수 있습니다. 게스트 기록은 이 기기에만 저장되므로, 앱을 지우거나 기기를 바꾸면 사라질 수 있습니다.
+• Apple로 로그인으로 연결하면 기록을 서버에 저장해 다른 기기에서도 이어서 할 수 있습니다.
+• 게임 안 &#x27;더보기 › 계정 삭제&#x27;에서 언제든 계정과 기록을 지울 수 있습니다. 지운 기록과 유료 아이템은 되살릴 수 없습니다.
+• 계정은 본인만 사용해야 하며, 계정을 사고팔거나 빌려줄 수 없습니다.</p></section>
+<section class="card"><h2>4. 유료 서비스</h2><p>• 결제는 App Store를 통해 이루어지며, 결제 수단과 영수증은 Apple이 처리합니다. 회사는 카드번호 등 결제 정보를 받거나 저장하지 않습니다.
+• 젬·골드 등 게임 재화와 아이템은 게임 안에서만 쓰는 이용권으로, 현금으로 바꾸거나 다른 사람에게 넘길 수 없습니다.
+• 도시 열기·광고 제거 등 &#x27;영구&#x27; 상품은 게임 서비스가 이어지는 동안 계정에 남습니다. 광고 제거는 자동으로 나오는 광고를 없애며, 보상을 받으려고 직접 보는 광고는 계속 고를 수 있습니다.
+• VIP 구독(주간·월간·연간)은 해지하기 전까지 같은 기간·같은 가격으로 자동 갱신됩니다. 다음 결제일 24시간 전까지 기기의 설정 › [내 이름] › 구독에서 해지할 수 있고, 해지해도 이미 결제한 기간까지는 이용할 수 있습니다. 무료 체험이 있는 경우, 체험이 끝나기 24시간 전까지 해지하지 않으면 유료 구독으로 이어집니다.
+• 투어 패스는 그 시즌 동안만 쓸 수 있습니다. 시즌이 끝나면 받지 않은 보상은 사라질 수 있으니 시즌 안에 받아 주세요.
+• 게임에는 확률에 따라 결과가 정해지는 유료 아이템(뽑기)이 없습니다.
+• 기기를 바꾸거나 다시 설치했다면 상점의 &#x27;구매 복원&#x27;으로 영구 상품과 구독을 되찾을 수 있습니다.</p></section>
+<section class="card"><h2>5. 청약철회와 환불</h2><p>• 결제 취소와 환불은 Apple의 환불 정책과 절차(<a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>)를 따릅니다.
+• 「전자상거래 등에서의 소비자보호에 관한 법률」 등 관련 법령에 따라, 사용하지 않은 유료 아이템은 구매 후 7일 안에 청약철회를 요청할 수 있습니다. 이미 사용했거나 일부를 사용한 아이템, 구매 즉시 지급되어 사용이 시작되는 아이템은 법령이 허용하는 범위에서 청약철회가 제한될 수 있으며, 상품 화면에 그 사실을 표시합니다.
+• 미성년자가 법정대리인의 동의 없이 결제한 경우, 미성년자 본인 또는 법정대리인이 결제를 취소할 수 있습니다.
+• 회사의 잘못으로 아이템이 지급되지 않았거나 서비스에 문제가 생긴 경우, <a href="mailto:support@parrythm.com">support@parrythm.com</a>으로 알려 주시면 확인 후 다시 지급하거나 보상합니다.</p></section>
+<section class="card"><h2>6. 광고</h2><p>게임에는 광고가 포함될 수 있습니다. 보상형 광고는 원할 때만 직접 보고 보상을 받는 방식이며, 보지 않아도 게임을 계속할 수 있습니다.</p></section>
+<section class="card"><h2>7. 금지 행동</h2><p>• 해킹·변조 프로그램, 매크로 등 비정상적인 방법으로 게임을 이용하는 행위
+• 버그를 알고도 반복해서 이용하는 행위
+• 다른 사람을 사칭하거나, 닉네임에 욕설·혐오·불법적인 표현을 쓰는 행위
+• 계정·아이템을 돈을 받고 거래하는 행위
+이런 행위가 확인되면 회사는 경고·이용 제한·계정 정지 등 필요한 조치를 할 수 있으며, 잘못 얻은 재화나 순위는 회수하거나 지울 수 있습니다.</p></section>
+<section class="card"><h2>8. 콘텐츠와 권리</h2><p>게임의 곡·가사·캐릭터·그림·프로그램에 대한 권리는 회사에 있습니다. 게임에서 만든 결과 화면·가사 카드 이미지는 개인적·비상업적으로 SNS 등에 공유할 수 있으며, 공유한 내용에 대한 책임은 공유한 사람에게 있습니다. 회사의 허락 없이 게임 콘텐츠를 상업적으로 쓰거나 복제·배포할 수 없습니다.</p></section>
+<section class="card"><h2>9. 서비스의 변경과 중단</h2><p>회사는 곡·도시·이벤트·밸런스 등 게임 내용을 바꾸거나 더할 수 있습니다. 서버 점검이나 장애 시 서비스가 잠시 멈출 수 있습니다. 게임 서비스를 끝내는 경우 최소 30일 전에 게임 안 공지로 알리며, 남아 있는 유료 재화의 처리는 관련 법령에 따릅니다.</p></section>
+<section class="card"><h2>10. 책임의 제한</h2><p>회사는 법이 허용하는 범위에서 게임을 &#x27;있는 그대로&#x27; 제공합니다. 이용자의 기기·통신 환경, 이용자의 잘못, 천재지변 등 회사가 통제할 수 없는 사유로 생긴 손해에 대해서는 책임을 지지 않습니다. 다만 회사의 고의 또는 중대한 과실로 생긴 손해는 예외로 합니다.</p></section>
+<section class="card"><h2>11. 약관의 변경</h2><p>약관을 바꿀 때는 시행일과 바뀌는 내용을 시행 7일 전(이용자에게 불리한 변경은 30일 전)부터 게임 안 공지와 이 페이지로 알립니다.</p></section>
+<section class="card"><h2>12. 준거법과 분쟁</h2><p>이 약관은 대한민국 법률에 따릅니다. 분쟁이 생기면 서로 성실하게 협의하며, 협의가 안 되면 민사소송법에 따른 관할 법원에서 해결합니다.</p></section>
+<section class="card biz"><h2>사업자 정보</h2><dl><dt>상호</dt><dd>주식회사 레이픽 (raypick Inc.)</dd><dt>대표자</dt><dd>신상권</dd><dt>사업자등록번호</dt><dd>781-86-04185</dd><dt>주소</dt><dd>경상남도 창원시 진해구 연구단지1길 16, 207-2호</dd><dt>문의</dt><dd><a href="mailto:support@parrythm.com">support@parrythm.com</a></dd></dl></section>
+</div>
+<div data-body="ja" lang="ja" hidden>
+<section class="card"><h2>1. 目的と同意</h2><p>本規約は、株式会社レイピック（以下「当社」）が提供するリズムアクションゲーム PARRYTHM（以下「本ゲーム」）の利用条件を定めます。本ゲームをダウンロードまたは利用することで、本規約に同意したものとみなします。同意しない場合は利用を中止し、本ゲームを削除できます。
+本規約とあわせて、Appleの標準エンドユーザー使用許諾契約（EULA）が適用されます。</p></section>
+<section class="card"><h2>2. 利用年齢</h2><p>本ゲームは12歳以上を対象としています。未成年の方は、課金など重要な行為の前に保護者（法定代理人）の同意を得てください。</p></section>
+<section class="card"><h2>3. アカウント</h2><p>• ゲストとしてすぐに始められます。ゲストの記録はこの端末にのみ保存されるため、アプリの削除や機種変更で失われることがあります。
+• Appleでサインインで連携すると、記録がサーバーに保存され、他の端末でも続きから遊べます。
+• ゲーム内の「その他 › アカウント削除」から、いつでもアカウントと記録を削除できます。削除した記録と有料アイテムは元に戻せません。
+• アカウントは本人のみが使用でき、売買や貸し借りはできません。</p></section>
+<section class="card"><h2>4. 有料サービス</h2><p>• 決済はApp Storeを通じて行われ、支払い方法と領収書はAppleが処理します。当社はカード番号などの決済情報を受け取らず、保存もしません。
+• ジェム・ゴールドなどのゲーム内通貨とアイテムは、本ゲーム内でのみ使える利用権であり、現金への交換や他人への譲渡はできません。
+• 都市の解放・広告削除など「永久」の商品は、本ゲームのサービスが続く間アカウントに残ります。広告削除は自動で表示される広告をなくすもので、報酬のために自分で見る広告は引き続き選べます。
+• VIPサブスクリプション（週額・月額・年額）は、解約するまで同じ期間・同じ価格で自動更新されます。次回の請求の24時間前までに端末の設定 › [ユーザ名] › サブスクリプションから解約でき、解約しても支払済みの期間が終わるまで利用できます。無料体験がある場合、体験終了の24時間前までに解約しないと有料のサブスクリプションに移行します。
+• ツアーパスはそのシーズンの間のみ利用できます。シーズンが終わると受け取っていない報酬は失われる場合があるため、シーズン中に受け取ってください。
+• 本ゲームには、確率によって結果が決まる有料アイテム（ガチャ）はありません。
+• 機種変更や再インストールをした場合は、ショップの「購入を復元」で永久の商品とサブスクリプションを取り戻せます。</p></section>
+<section class="card"><h2>5. 返金</h2><p>• 購入の取消と返金は、Appleの返金ポリシーと手続き（<a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>）に従います。
+• 未成年者が保護者の同意なく行った購入は、法令に従い取り消せる場合があります。
+• 当社の誤りでアイテムが付与されなかった場合やサービスに問題が生じた場合は、<a href="mailto:support@parrythm.com">support@parrythm.com</a> までご連絡ください。確認のうえ再付与または補償します。</p></section>
+<section class="card"><h2>6. 広告</h2><p>本ゲームには広告が含まれる場合があります。報酬型広告は自分が望むときにだけ見るもので、見なくてもゲームを続けられます。</p></section>
+<section class="card"><h2>7. 禁止事項</h2><p>• ハッキング・改造プログラム、マクロなど不正な方法での利用
+• バグと知りながら繰り返し利用する行為
+• 他人へのなりすまし、ニックネームでの暴言・差別・違法な表現
+• アカウント・アイテムの金銭取引
+これらが確認された場合、当社は警告・利用制限・アカウント停止など必要な措置を行い、不正に得た通貨や順位を回収・削除できます。</p></section>
+<section class="card"><h2>8. コンテンツと権利</h2><p>本ゲームの楽曲・歌詞・キャラクター・イラスト・プログラムの権利は当社に帰属します。本ゲームで作ったリザルト画面・歌詞カード画像は、個人的・非商業的な目的でSNSなどに共有できます。共有した内容の責任は共有した方にあります。当社の許可なくゲームのコンテンツを商業利用・複製・配布することはできません。</p></section>
+<section class="card"><h2>9. サービスの変更と中断</h2><p>当社は楽曲・都市・イベント・バランスなどゲーム内容を変更・追加できます。メンテナンスや障害時にはサービスが一時的に止まる場合があります。本ゲームのサービスを終了する場合は、少なくとも30日前にゲーム内でお知らせし、残っている有料通貨は関係法令に従って取り扱います。</p></section>
+<section class="card"><h2>10. 責任の制限</h2><p>当社は法令が認める範囲で本ゲームを「現状のまま」提供します。利用者の端末・通信環境、利用者の過失、天災など当社が管理できない原因による損害については責任を負いません。ただし、当社の故意または重大な過失による損害はこの限りではありません。</p></section>
+<section class="card"><h2>11. 規約の変更</h2><p>規約を変更する場合は、施行日と変更内容を施行の7日前（利用者に不利な変更は30日前）からゲーム内のお知らせとこのページでお知らせします。</p></section>
+<section class="card"><h2>12. 準拠法と紛争</h2><p>本規約は大韓民国の法令に準拠します。紛争が生じた場合は誠実に協議し、解決しない場合は民事訴訟法に基づく管轄裁判所で解決します。</p></section>
+<section class="card biz"><h2>事業者情報</h2><dl><dt>商号</dt><dd>株式会社レイピック (raypick Inc.)</dd><dt>代表者</dt><dd>Shin Sangkwon</dd><dt>事業者登録番号</dt><dd>781-86-04185</dd><dt>所在地</dt><dd>207-2, 16, Yeongudanji 1-gil, Jinhae-gu, Changwon-si, Gyeongsangnam-do, Republic of Korea</dd><dt>お問い合わせ</dt><dd><a href="mailto:support@parrythm.com">support@parrythm.com</a></dd></dl></section>
+</div>
+<div data-body="en" lang="en" hidden>
+<section class="card"><h2>1. Purpose and acceptance</h2><p>These terms govern your use of PARRYTHM (the &quot;Game&quot;), a rhythm action game provided by raypick Inc. (the &quot;Company&quot;). By downloading or using the Game, you agree to these terms. If you do not agree, you may stop using and delete the Game.
+Apple&#x27;s standard End User License Agreement (EULA) also applies together with these terms.</p></section>
+<section class="card"><h2>2. Age</h2><p>The Game is intended for users aged 12 and over. Minors should get permission from a parent or legal guardian before taking important actions such as making purchases.</p></section>
+<section class="card"><h2>3. Accounts</h2><p>• You can start right away as a guest. Guest progress is stored only on this device and may be lost if you delete the app or change devices.
+• If you link Sign in with Apple, your progress is saved to our servers so you can continue on another device.
+• You can delete your account and progress anytime in &quot;More › Delete account&quot;. Deleted progress and paid items cannot be restored.
+• Accounts are for personal use only and may not be sold, bought or lent.</p></section>
+<section class="card"><h2>4. Paid services</h2><p>• Payments are made through the App Store, and payment methods and receipts are handled by Apple. The Company does not receive or store card numbers or other payment details.
+• In-game currencies and items such as gems and gold are licenses to use within the Game only. They cannot be exchanged for cash or transferred to others.
+• &quot;Permanent&quot; products such as city unlocks and ad removal stay on your account for as long as the Game service continues. Ad removal removes ads that appear automatically; you may still choose to watch reward ads.
+• VIP subscriptions (weekly, monthly, yearly) renew automatically for the same period and price until cancelled. You can cancel at least 24 hours before the next charge in your device&#x27;s Settings › [your name] › Subscriptions, and you keep access until the end of the paid period. If a free trial is offered, it converts to a paid subscription unless cancelled at least 24 hours before the trial ends.
+• The Tour Pass is usable only during its season. Unclaimed rewards may be lost when the season ends, so please claim them within the season.
+• The Game has no paid items whose results are decided by chance (loot boxes).
+• If you change devices or reinstall, you can recover permanent products and subscriptions with &quot;Restore Purchases&quot; in the shop.</p></section>
+<section class="card"><h2>5. Cancellations and refunds</h2><p>• Cancellations and refunds follow Apple&#x27;s refund policy and procedures (<a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>).
+• Under applicable laws such as the Korean Act on Consumer Protection in Electronic Commerce, you may request to withdraw a purchase of an unused paid item within 7 days of purchase. Withdrawal may be limited, to the extent permitted by law, for items that have been used in whole or in part or that are delivered and start being used immediately; this is shown on the product screen.
+• If a minor makes a purchase without a legal guardian&#x27;s consent, the minor or the guardian may cancel it.
+• If an item was not delivered or the service failed due to the Company&#x27;s fault, contact <a href="mailto:support@parrythm.com">support@parrythm.com</a> and we will check and re-deliver or compensate.</p></section>
+<section class="card"><h2>6. Advertising</h2><p>The Game may contain ads. Reward ads are watched only when you choose, and you can keep playing without watching them.</p></section>
+<section class="card"><h2>7. Prohibited conduct</h2><p>• Using hacks, modified clients, macros or other abnormal methods
+• Knowingly and repeatedly exploiting bugs
+• Impersonating others, or using abusive, hateful or illegal expressions in nicknames
+• Trading accounts or items for money
+If such conduct is confirmed, the Company may issue warnings, restrict use or suspend accounts, and may remove currencies or rankings obtained improperly.</p></section>
+<section class="card"><h2>8. Content and rights</h2><p>All rights to the Game&#x27;s songs, lyrics, characters, artwork and software belong to the Company. You may share result screens and lyric card images made in the Game on social media for personal, non-commercial purposes; you are responsible for what you share. You may not use, copy or distribute Game content commercially without the Company&#x27;s permission.</p></section>
+<section class="card"><h2>9. Changes and suspension of service</h2><p>The Company may change or add Game content such as songs, cities, events and balance. The service may pause temporarily for maintenance or outages. If the Game service ends, we will announce it in the Game at least 30 days in advance, and remaining paid currencies will be handled according to applicable law.</p></section>
+<section class="card"><h2>10. Limitation of liability</h2><p>To the extent permitted by law, the Company provides the Game &quot;as is&quot;. The Company is not liable for damages caused by your device or network, your own fault, natural disasters or other causes beyond its control, except for damages caused by the Company&#x27;s intent or gross negligence.</p></section>
+<section class="card"><h2>11. Changes to these terms</h2><p>When we change these terms, we will announce the effective date and changes in the Game and on this page at least 7 days in advance (30 days for changes unfavorable to users).</p></section>
+<section class="card"><h2>12. Governing law and disputes</h2><p>These terms are governed by the laws of the Republic of Korea. Disputes will first be settled in good faith; otherwise they will be resolved by the competent court under the Korean Civil Procedure Act.</p></section>
+<section class="card biz"><h2>Business information</h2><dl><dt>Company</dt><dd>raypick Inc.</dd><dt>Representative</dt><dd>Shin Sangkwon</dd><dt>Business registration no.</dt><dd>781-86-04185</dd><dt>Address</dt><dd>207-2, 16, Yeongudanji 1-gil, Jinhae-gu, Changwon-si, Gyeongsangnam-do, Republic of Korea</dd><dt>Contact</dt><dd><a href="mailto:support@parrythm.com">support@parrythm.com</a></dd></dl></section>
+</div>
+<footer><img src="../assets/logo.webp" alt=""><span>© 2026 raypick Inc. · <a href="mailto:support@parrythm.com">support@parrythm.com</a></span></footer>
+</div><script>
+var L={"ko": {"sub": "이용약관", "eff": "시행일: 2026.10.05", "me": "이용약관", "other": "개인정보 처리방침"}, "ja": {"sub": "利用規約", "eff": "施行日：2026年10月5日", "me": "利用規約", "other": "プライバシーポリシー"}, "en": {"sub": "Terms of Service", "eff": "Effective: October 5, 2026", "me": "Terms of Service", "other": "Privacy Policy"}};var btn=document.querySelectorAll('[data-lang]');
+function pick(l){btn.forEach(function(b){b.classList.toggle('on',b.dataset.lang===l)});
+document.querySelectorAll('[data-body]').forEach(function(d){d.hidden=d.dataset.body!==l});
+document.querySelectorAll('[data-t]').forEach(function(e){e.textContent=L[l][e.dataset.t]});
+document.querySelectorAll('[data-href]').forEach(function(a){a.href=a.dataset.href+'?lang='+l});
+document.documentElement.lang=l;try{localStorage.setItem('lang',l)}catch(e){}}
+btn.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.lang)})});
+var q=(location.search.match(/lang=(ko|ja|en)/)||[])[1],s=null;try{s=localStorage.getItem('lang')}catch(e){}
+var n=(navigator.language||'ko').slice(0,2);pick(q||s||(n==='ja'||n==='en'?n:'ko'));
+</script></body></html>

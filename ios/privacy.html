@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy · PARRYTHM</title><meta name="theme-color" content="#0b0614"><link rel="icon" href="../assets/icon.png">
+<style>
+@font-face{font-family:Anton;src:url(../assets/anton.woff2) format("woff2");font-display:swap}
+@font-face{font-family:BHS;src:url(../assets/bhs.woff2) format("woff2");font-display:swap}
+@font-face{font-family:Pret;src:url(../assets/pret.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{--bg:#0b0614;--ink:#fff;--txt:#e4dbf5;--mute:#b9acd6;--dim:#8a7aa8;--pink:#ff2d7a;--pink2:#ff79b0;--cyan:#29e3ff;--gold:#ffd34d;--glass:rgba(22,10,40,.84);--line:rgba(255,255,255,.13)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.8 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Hiragino Sans","Yu Gothic",system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(70% 45% at 85% 0%,rgba(255,45,122,.32),transparent 70%),radial-gradient(60% 50% at 0% 30%,rgba(139,92,255,.26),transparent 70%),radial-gradient(50% 40% at 50% 100%,rgba(41,227,255,.12),transparent 70%),var(--bg)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:7px 7px;pointer-events:none}
+a{color:var(--pink2)}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 16px;background:linear-gradient(rgba(11,6,20,.96),rgba(11,6,20,.82));backdrop-filter:blur(8px);border-bottom:2px solid var(--pink)}
+.top img{height:42px;display:block}.top .sp{flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:0;cursor:pointer;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(255,255,255,.07);padding:9px 13px;transform:skewX(-10deg);text-decoration:none;display:inline-block}
+.chip>span{display:inline-block;transform:skewX(10deg)}
+.chip.on{background:var(--pink);color:#fff;box-shadow:3px 3px 0 #000}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 80px;position:relative}
+.hero{position:relative;padding:38px 0 26px;min-height:250px;overflow-x:clip;overflow-y:visible}
+.hero .art{position:absolute;right:-30px;top:-6px;height:300px;opacity:.95;pointer-events:none;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);filter:drop-shadow(0 0 30px rgba(255,45,122,.35))}
+.tape{display:inline-block;font:400 14px/1 Anton,BHS,sans-serif;letter-spacing:.1em;color:#2b1a00;background:var(--gold) repeating-linear-gradient(-45deg,transparent 0 6px,rgba(0,0,0,.08) 6px 12px);padding:6px 12px;transform:rotate(-3deg);box-shadow:2px 2px 0 #000}
+.tape.plat{background-color:var(--cyan);color:#04121a;margin-left:6px;transform:rotate(2deg)}
+h1{position:relative;margin:14px 0 4px;font:400 clamp(40px,9vw,66px)/.98 Anton,BHS,sans-serif;font-style:italic;letter-spacing:.01em;color:#fff;text-shadow:3px 3px 0 var(--pink),0 0 24px rgba(255,45,122,.55);max-width:72%}
+.sub{position:relative;font:900 clamp(22px,4.6vw,30px)/1.2 BHS,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;font-synthesis:none;color:var(--gold);text-shadow:2px 2px 0 #000;margin:6px 0 0}
+.eff{display:inline-block;margin-top:14px;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(0,0,0,.4);padding:8px 12px;border-left:3px solid var(--pink)}
+.docs{display:flex;gap:8px;margin:6px 0 22px;flex-wrap:wrap}
+.card{position:relative;background:var(--glass);margin:0 0 14px;padding:20px 20px 18px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:inset 0 0 0 1px var(--line)}
+.card:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--pink),transparent)}
+h2{margin:0 0 10px;font:700 17px/1.4 Pret,system-ui,sans-serif;color:#fff}
+.card p{margin:0;white-space:pre-line}
+.biz{background:rgba(43,26,0,.55);box-shadow:inset 0 0 0 1.5px var(--gold)}
+.biz:before{background:linear-gradient(var(--gold),transparent)}
+.biz dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14.5px}
+.biz dt{color:var(--gold);font-weight:700}.biz dd{margin:0;color:var(--txt)}
+footer{margin-top:30px;padding:22px 0 0;border-top:2px solid var(--pink);display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--dim);font-size:13px}
+footer img{height:34px}
+[hidden]{display:none!important}
+@media(max-width:560px){.hero .art{height:210px;right:-40px;opacity:.55}h1{max-width:100%}.top img{height:34px}}
+</style></head><body>
+<div class="top"><a href="../"><img src="../assets/logo.webp" alt="PARRYTHM"></a><span class="sp"></span><div class="chips"><button class="chip on" data-lang="ko"><span>한국어</span></button><button class="chip" data-lang="ja"><span>日本語</span></button><button class="chip" data-lang="en"><span>English</span></button></div></div>
+<div class="wrap">
+<div class="hero"><img class="art" src="../assets/queen.webp" alt="">
+<span class="tape">PARRYTHM</span><span class="tape plat">iOS</span>
+<h1>PRIVACY POLICY</h1><p class="sub" data-t="sub">개인정보 처리방침</p><span class="eff" data-t="eff">시행일: 2026.10.05</span></div>
+<div class="docs"><span class="chip on"><span data-t="me">개인정보 처리방침</span></span><a class="chip" data-href="terms.html" href="terms.html"><span data-t="other">이용약관</span></a></div>
+<div data-body="ko" lang="ko">
+<section class="card"><h2>1. 우리의 원칙</h2><p>주식회사 레이픽(이하 &quot;회사&quot;)은 PARRYTHM(이하 &quot;게임&quot;)을 운영하면서 꼭 필요한 정보만 처리하고, 이용자의 정보를 팔지 않습니다. 게스트로 즐기면 기록은 이 기기에만 저장되고, 계정을 연결하거나 서버 기능을 쓸 때만 필요한 정보를 서버로 보냅니다.</p></section>
+<section class="card"><h2>2. 처리하는 정보와 목적</h2><p>• 게임 기록: 닉네임, 게임 안 ID, 레벨·점수·기록·보유 아이템, 설정 — 게임 진행, 기록 저장, 순위 표시를 위해
+• 계정 연결 시: Apple 계정(Apple로 로그인)의 식별값(이메일을 함께 받는 경우 그 이메일) — 다른 기기에서 기록을 이어 하고 계정을 보호하기 위해
+• 구매 기록: 상품, 구매 시각, 스토어 거래 번호 — 구매한 아이템을 지급·복원하고 문의에 답하기 위해 (카드번호 등 결제 정보는 받지 않습니다)
+• 기기·이용 정보: 기기 모델, 운영체제, 언어·국가, 앱 버전, 이용 기록, 오류 기록 — 게임 개선과 오류 수정을 위해
+• 광고 식별자: Apple 광고 식별자(IDFA, &#x27;앱 추적 허용&#x27;을 한 경우에만) — 광고를 보여 주고 광고 효과를 재기 위해
+• 푸시 알림 토큰: 알림을 켠 경우, 이벤트·보상 알림을 보내기 위해
+• 문의: 이용자가 메일로 문의하면 이메일 주소, 문의 내용, 게임 안 ID, 앱 버전, 기기 모델 — 답변을 위해
+게임 안 &#x27;공유&#x27;로 만든 이미지는 이용자가 고른 곳(사진첩·SNS 등)에만 저장·전달되며, 회사로 보내지지 않습니다.</p></section>
+<section class="card"><h2>3. 보유 기간과 파기</h2><p>• 게임 기록·계정 정보: 계정을 삭제할 때까지 (삭제를 요청하면 지체 없이, 늦어도 30일 안에 파기)
+• 게스트 기록: 기기에만 있으며, 앱 삭제나 &#x27;계정 삭제&#x27;로 지워집니다
+• 구매 기록: 관련 법령에 따라 5년, 문의·분쟁 처리 기록: 3년
+• 이용·오류 기록: 수집한 날부터 최대 14개월
+보유 기간이 끝나거나 목적을 이룬 정보는 다시 살릴 수 없는 방법으로 지웁니다.</p></section>
+<section class="card"><h2>4. 처리 위탁과 국외 이전</h2><p>회사는 서비스를 위해 아래 회사에 정보 처리를 맡기며, 이 회사들의 서버는 해외에 있습니다.
+• Google LLC (미국) — Firebase(계정·기록 저장, 순위, 푸시 알림, 이용 통계, 오류 보고), AdMob(광고): 위 2번의 게임 기록·계정 식별값·기기·이용 정보·광고 식별자·푸시 토큰을 게임을 이용할 때 암호화된 네트워크로 보내며, 위 3번의 기간 동안 보관합니다.
+• Cloudflare, Inc. (미국) — 곡 파일 내려받기: 곡을 받을 때 IP 주소와 요청 기록이 전달됩니다.
+• 로그인과 결제는 이용자가 Apple과 맺은 계정·결제 관계에 따라 Apple이 처리합니다.
+국외 이전을 원하지 않으면 계정 연결·순위 등 해당 기능을 쓰지 않거나 계정을 삭제할 수 있습니다. 이 경우 일부 기능(다른 기기에서 이어 하기 등)을 쓸 수 없습니다. 회사는 이용자의 정보를 다른 회사에 팔거나 제공하지 않습니다(법령에 따른 요청은 예외).</p></section>
+<section class="card"><h2>5. 광고와 자동 수집 장치</h2><p>광고와 이용 통계는 광고 식별자와 앱 안 이용 기록을 사용합니다. &#x27;앱 추적 허용&#x27;을 하지 않으면 광고 식별자를 쓰지 않으며, 기기의 설정 › 개인정보 보호 및 보안 › 추적에서 언제든 바꿀 수 있습니다. 거부해도 게임은 그대로 할 수 있고, 광고가 덜 맞춤형으로 보일 수 있습니다.</p></section>
+<section class="card"><h2>6. 권한</h2><p>• 사진첩 저장: 공유 이미지를 저장할 때만 씁니다. 사진첩에 &#x27;추가&#x27;만 하며, 사진을 읽지 않습니다.
+• 알림: 켠 경우에만 보냅니다.
+• 진동·인터넷: 타격감과 곡 내려받기·저장을 위해 씁니다.
+권한은 거부할 수 있고, 그 기능만 제한됩니다.</p></section>
+<section class="card"><h2>7. 이용자의 권리</h2><p>이용자(만 14세 미만 아동은 법정대리인)는 언제든 자신의 정보를 보거나 고치거나 지워 달라고, 또는 처리를 멈춰 달라고 요청할 수 있습니다. 게임 안 &#x27;더보기 › 계정 삭제&#x27;로 바로 지우거나 <a href="mailto:support@parrythm.com">support@parrythm.com</a>으로 요청하면 지체 없이 처리합니다.</p></section>
+<section class="card"><h2>8. 아동의 개인정보</h2><p>게임은 만 12세 이상을 대상으로 합니다. 회사는 만 14세 미만 아동의 개인정보를 법정대리인의 동의 없이 알면서 수집하지 않습니다. 만 14세 미만 아동이 계정을 연결하거나 결제하려면 법정대리인의 동의가 필요하며, 동의 없이 수집된 사실을 알게 되면 그 정보를 지체 없이 파기합니다.</p></section>
+<section class="card"><h2>9. 안전 조치</h2><p>정보를 보낼 때는 암호화된 통신을 쓰고, 서버 정보에는 꼭 필요한 사람만 접근하도록 권한을 관리합니다.</p></section>
+<section class="card"><h2>10. 개인정보 보호책임자와 문의</h2><p>개인정보 보호책임자: 신상권 (대표)
+문의: <a href="mailto:support@parrythm.com">support@parrythm.com</a>
+개인정보 침해에 대한 신고나 상담은 아래 기관에도 할 수 있습니다.
+• 개인정보침해신고센터 (<a href="https://privacy.kisa.or.kr" rel="noopener">privacy.kisa.or.kr</a> / 국번 없이 118)
+• 개인정보분쟁조정위원회 (<a href="https://www.kopico.go.kr" rel="noopener">www.kopico.go.kr</a> / 1833-6972)
+• 대검찰청 사이버수사과 (<a href="https://www.spo.go.kr" rel="noopener">www.spo.go.kr</a> / 국번 없이 1301)
+• 경찰청 사이버수사국 (<a href="https://ecrm.police.go.kr" rel="noopener">ecrm.police.go.kr</a> / 국번 없이 182)</p></section>
+<section class="card"><h2>11. 처리방침의 변경</h2><p>처리방침을 바꿀 때는 시행일과 바뀌는 내용을 시행 7일 전(중요한 변경은 30일 전)부터 게임 안 공지와 이 페이지로 알립니다.</p></section>
+<section class="card biz"><h2>사업자 정보</h2><dl><dt>상호</dt><dd>주식회사 레이픽 (raypick Inc.)</dd><dt>대표자</dt><dd>신상권</dd><dt>사업자등록번호</dt><dd>781-86-04185</dd><dt>주소</dt><dd>경상남도 창원시 진해구 연구단지1길 16, 207-2호</dd><dt>문의</dt><dd><a href="mailto:support@parrythm.com">support@parrythm.com</a></dd></dl></section>
+</div>
+<div data-body="ja" lang="ja" hidden>
+<section class="card"><h2>1. 私たちの原則</h2><p>株式会社レイピック（以下「当社」）は、PARRYTHM（以下「本ゲーム」）の運営に必要な情報だけを取り扱い、利用者の情報を販売しません。ゲストで遊ぶ場合、記録はこの端末にのみ保存され、アカウント連携やサーバー機能を使うときだけ必要な情報をサーバーに送ります。</p></section>
+<section class="card"><h2>2. 取り扱う情報と目的</h2><p>• ゲーム記録：ニックネーム、ゲーム内ID、レベル・スコア・記録・所持アイテム、設定 — ゲームの進行、記録の保存、ランキング表示のため
+• アカウント連携時：Appleアカウント（Appleでサインイン）の識別子（メールアドレスを受け取る場合はそのメールアドレス） — 他の端末で続きから遊び、アカウントを保護するため
+• 購入記録：商品、購入日時、ストアの取引番号 — 購入したアイテムの付与・復元とお問い合わせへの回答のため（カード番号などの決済情報は受け取りません）
+• 端末・利用情報：端末のモデル、OS、言語・国、アプリのバージョン、利用記録、エラー記録 — ゲームの改善とエラー修正のため
+• 広告識別子：Appleの広告識別子（IDFA、「トラッキングを許可」した場合のみ） — 広告の表示と効果測定のため
+• プッシュ通知トークン：通知をオンにした場合、イベント・報酬のお知らせのため
+• お問い合わせ：メールでお問い合わせいただいた場合、メールアドレス、内容、ゲーム内ID、アプリのバージョン、端末のモデル — 回答のため
+ゲーム内の「共有」で作った画像は、利用者が選んだ場所（写真ライブラリ・SNSなど）にのみ保存・送信され、当社には送られません。</p></section>
+<section class="card"><h2>3. 保存期間と削除</h2><p>• ゲーム記録・アカウント情報：アカウントを削除するまで（削除のご依頼後は遅滞なく、遅くとも30日以内に削除）
+• ゲストの記録：端末にのみあり、アプリの削除または「アカウント削除」で消えます
+• 購入記録：法令に従い5年、お問い合わせ・紛争処理の記録：3年
+• 利用・エラー記録：収集日から最長14か月
+保存期間が終わった情報や目的を達成した情報は、復元できない方法で削除します。</p></section>
+<section class="card"><h2>4. 委託と国外移転</h2><p>当社はサービス提供のため、以下の会社に情報の取り扱いを委託しています。これらの会社のサーバーは海外にあります。
+• Google LLC（米国） — Firebase（アカウント・記録の保存、ランキング、プッシュ通知、利用統計、エラー報告）、AdMob（広告）：上記2のゲーム記録・アカウント識別子・端末/利用情報・広告識別子・プッシュトークンを、ゲーム利用時に暗号化された通信で送信し、上記3の期間保存します。
+• Cloudflare, Inc.（米国） — 楽曲ファイルのダウンロード：楽曲を受け取るときにIPアドレスとリクエスト記録が送られます。
+• サインインと決済は、利用者がAppleと結んだアカウント・決済の関係に基づきAppleが処理します。
+国外移転を望まない場合は、アカウント連携・ランキングなどの機能を使わないか、アカウントを削除できます。その場合、一部の機能（他の端末で続きから遊ぶなど）は使えません。当社は利用者の情報を他社に販売・提供しません（法令に基づく要請を除く）。</p></section>
+<section class="card"><h2>5. 広告と自動収集</h2><p>広告と利用統計には、広告識別子とアプリ内の利用記録を使います。「トラッキングを許可」しない場合、広告識別子は使いません。設定 › プライバシーとセキュリティ › トラッキングからいつでも変更できます。拒否してもゲームはそのまま遊べ、広告のパーソナライズが弱くなるだけです。</p></section>
+<section class="card"><h2>6. 権限</h2><p>• 写真ライブラリへの保存：共有画像を保存するときだけ使います。写真の「追加」のみで、写真を読み取ることはありません。
+• 通知：オンにした場合のみ送ります。
+• バイブレーション・インターネット：打撃の手ごたえ、楽曲のダウンロードと記録の保存に使います。
+権限は拒否でき、その機能のみが制限されます。</p></section>
+<section class="card"><h2>7. 利用者の権利</h2><p>利用者（14歳未満の児童の場合は保護者）は、いつでも自分の情報の閲覧・訂正・削除、または取り扱いの停止を求めることができます。ゲーム内の「その他 › アカウント削除」ですぐに削除するか、<a href="mailto:support@parrythm.com">support@parrythm.com</a> までご連絡いただければ遅滞なく対応します。</p></section>
+<section class="card"><h2>8. 児童の個人情報</h2><p>本ゲームは12歳以上を対象としています。当社は14歳未満の児童の個人情報を、保護者の同意なく意図的に収集しません。14歳未満の児童がアカウント連携や課金をするには保護者の同意が必要で、同意なく収集されたことが分かった場合はその情報を遅滞なく削除します。</p></section>
+<section class="card"><h2>9. 安全管理措置</h2><p>情報の送信には暗号化された通信を使い、サーバーの情報には必要な担当者だけがアクセスできるよう権限を管理しています。</p></section>
+<section class="card"><h2>10. 個人情報保護責任者・お問い合わせ</h2><p>個人情報保護責任者：Shin Sangkwon（代表）
+お問い合わせ：<a href="mailto:support@parrythm.com">support@parrythm.com</a></p></section>
+<section class="card"><h2>11. 本ポリシーの変更</h2><p>本ポリシーを変更する場合は、施行日と変更内容を施行の7日前（重要な変更は30日前）からゲーム内のお知らせとこのページでお知らせします。</p></section>
+<section class="card biz"><h2>事業者情報</h2><dl><dt>商号</dt><dd>株式会社レイピック (raypick Inc.)</dd><dt>代表者</dt><dd>Shin Sangkwon</dd><dt>事業者登録番号</dt><dd>781-86-04185</dd><dt>所在地</dt><dd>207-2, 16, Yeongudanji 1-gil, Jinhae-gu, Changwon-si, Gyeongsangnam-do, Republic of Korea</dd><dt>お問い合わせ</dt><dd><a href="mailto:support@parrythm.com">support@parrythm.com</a></dd></dl></section>
+</div>
+<div data-body="en" lang="en" hidden>
+<section class="card"><h2>1. Our principle</h2><p>raypick Inc. (the &quot;Company&quot;) processes only the information needed to run PARRYTHM (the &quot;Game&quot;) and never sells your information. When you play as a guest, your progress stays on this device; information is sent to our servers only when you link an account or use server features.</p></section>
+<section class="card"><h2>2. Information we process and why</h2><p>• Game data: nickname, in-game ID, level, scores, records, owned items and settings — to run the Game, save progress and show rankings
+• When you link an account: the identifier of your Apple account (Sign in with Apple) (and the email, if provided) — to continue on other devices and protect your account
+• Purchase records: product, time of purchase and store transaction ID — to deliver and restore items and answer inquiries (we do not receive card numbers or other payment details)
+• Device and usage data: device model, operating system, language and country, app version, usage logs and crash logs — to improve the Game and fix errors
+• Advertising identifier: Apple&#x27;s Identifier for Advertisers (IDFA), only if you allow tracking — to show ads and measure their performance
+• Push notification token: if you turn on notifications — to send event and reward notices
+• Support: if you email us, your email address, message, in-game ID, app version and device model — to reply
+Images created with &quot;Share&quot; in the Game are saved or sent only where you choose (photo library, social apps, etc.) and are never sent to the Company.</p></section>
+<section class="card"><h2>3. Retention and deletion</h2><p>• Game data and account information: until you delete your account (deleted without delay, at the latest within 30 days of your request)
+• Guest progress: stays on the device and is removed when you delete the app or use &quot;Delete account&quot;
+• Purchase records: 5 years, and inquiry and dispute records: 3 years, as required by law
+• Usage and crash logs: up to 14 months from collection
+When the retention period ends or the purpose is fulfilled, information is deleted in a way that cannot be recovered.</p></section>
+<section class="card"><h2>4. Service providers and international transfers</h2><p>We entrust the following companies with processing to provide the service. Their servers are located outside Korea.
+• Google LLC (USA) — Firebase (account and progress storage, rankings, push notifications, analytics, crash reports) and AdMob (ads): the game data, account identifier, device and usage data, advertising identifier and push token in section 2 are sent over encrypted connections while you use the Game and kept for the periods in section 3.
+• Cloudflare, Inc. (USA) — song file downloads: your IP address and request logs are sent when you download songs.
+• Sign-in and payments are handled by Apple under your own account and payment relationship with Apple.
+If you do not want your information transferred abroad, you may choose not to use those features (account linking, rankings, etc.) or delete your account; some features, such as continuing on another device, will then be unavailable. We do not sell or provide your information to other companies, except when required by law.</p></section>
+<section class="card"><h2>5. Ads and automatic collection</h2><p>Ads and analytics use the advertising identifier and in-app usage logs. If you do not allow tracking, the advertising identifier is not used; you can change this anytime in Settings › Privacy &amp; Security › Tracking. You can keep playing even if you opt out; ads may simply be less personalized.</p></section>
+<section class="card"><h2>6. Permissions</h2><p>• Photo library: used only when you save a share image. The Game only adds images and never reads your photos.
+• Notifications: sent only if you turn them on.
+• Vibration and internet: used for hit feedback and for downloading songs and saving progress.
+You may deny permissions; only the related feature is limited.</p></section>
+<section class="card"><h2>7. Your rights</h2><p>You (or a legal guardian, for children under 14) may ask at any time to view, correct or delete your information, or to stop its processing. Delete it instantly in &quot;More › Delete account&quot;, or email <a href="mailto:support@parrythm.com">support@parrythm.com</a> and we will act without delay.</p></section>
+<section class="card"><h2>8. Children&#x27;s privacy</h2><p>The Game is intended for users aged 12 and over. The Company does not knowingly collect personal information from children under 14 without a legal guardian&#x27;s consent. A child under 14 needs a guardian&#x27;s consent to link an account or make purchases; if we learn that such information was collected without consent, we delete it without delay.</p></section>
+<section class="card"><h2>9. Security</h2><p>We use encrypted connections to transfer information and limit access to server data to those who need it.</p></section>
+<section class="card"><h2>10. Data protection officer and contact</h2><p>Data Protection Officer: Shin Sangkwon (CEO)
+Contact: <a href="mailto:support@parrythm.com">support@parrythm.com</a>
+Users in Korea may also contact the Personal Information Infringement Report Center (<a href="https://privacy.kisa.or.kr" rel="noopener">privacy.kisa.or.kr</a> / 118) or the Personal Information Dispute Mediation Committee (<a href="https://www.kopico.go.kr" rel="noopener">www.kopico.go.kr</a>).</p></section>
+<section class="card"><h2>11. Changes to this policy</h2><p>When we change this policy, we will announce the effective date and changes in the Game and on this page at least 7 days in advance (30 days for important changes).</p></section>
+<section class="card biz"><h2>Business information</h2><dl><dt>Company</dt><dd>raypick Inc.</dd><dt>Representative</dt><dd>Shin Sangkwon</dd><dt>Business registration no.</dt><dd>781-86-04185</dd><dt>Address</dt><dd>207-2, 16, Yeongudanji 1-gil, Jinhae-gu, Changwon-si, Gyeongsangnam-do, Republic of Korea</dd><dt>Contact</dt><dd><a href="mailto:support@parrythm.com">support@parrythm.com</a></dd></dl></section>
+</div>
+<footer><img src="../assets/logo.webp" alt=""><span>© 2026 raypick Inc. · <a href="mailto:support@parrythm.com">support@parrythm.com</a></span></footer>
+</div><script>
+var L={"ko": {"sub": "개인정보 처리방침", "eff": "시행일: 2026.10.05", "me": "개인정보 처리방침", "other": "이용약관"}, "ja": {"sub": "プライバシーポリシー", "eff": "施行日：2026年10月5日", "me": "プライバシーポリシー", "other": "利用規約"}, "en": {"sub": "Privacy Policy", "eff": "Effective: October 5, 2026", "me": "Privacy Policy", "other": "Terms of Service"}};var btn=document.querySelectorAll('[data-lang]');
+function pick(l){btn.forEach(function(b){b.classList.toggle('on',b.dataset.lang===l)});
+document.querySelectorAll('[data-body]').forEach(function(d){d.hidden=d.dataset.body!==l});
+document.querySelectorAll('[data-t]').forEach(function(e){e.textContent=L[l][e.dataset.t]});
+document.querySelectorAll('[data-href]').forEach(function(a){a.href=a.dataset.href+'?lang='+l});
+document.documentElement.lang=l;try{localStorage.setItem('lang',l)}catch(e){}}
+btn.forEach(function(b){b.addEventListener('click',function(){pick(b.dataset.lang)})});
+var q=(location.search.match(/lang=(ko|ja|en)/)||[])[1],s=null;try{s=localStorage.getItem('lang')}catch(e){}
+var n=(navigator.language||'ko').slice(0,2);pick(q||s||(n==='ja'||n==='en'?n:'ko'));
+</script></body></html>
