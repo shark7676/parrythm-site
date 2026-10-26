@@ -1,72 +1,201 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>PARRYTHM — Parry the Beat</title><meta name="theme-color" content="#0b0614"><link rel="icon" href="assets/icon.png">
-<meta name="description" content="PARRYTHM — rhythm action game. Parry the beat.">
+<meta name="description" content="PARRYTHM — rhythm action world tour. Parry the beat, strike back, and K.O. star bosses from Seoul to London. Play free on Google Play and the App Store.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://parrythm.com/"><meta property="og:site_name" content="PARRYTHM">
+<meta property="og:title" content="PARRYTHM — Parry the Beat"><meta property="og:description" content="Rhythm action world tour. Play free on Google Play & App Store.">
+<meta property="og:image" content="https://parrythm.com/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://parrythm.com/og.jpg">
 <style>
 @font-face{font-family:Anton;src:url(assets/anton.woff2) format("woff2");font-display:swap}
 @font-face{font-family:BHS;src:url(assets/bhs.woff2) format("woff2");font-display:swap}
 @font-face{font-family:Pret;src:url(assets/pret.woff2) format("woff2");font-weight:700;font-display:swap}
-:root{--bg:#0b0614;--ink:#fff;--txt:#e4dbf5;--mute:#b9acd6;--dim:#8a7aa8;--pink:#ff2d7a;--pink2:#ff79b0;--cyan:#29e3ff;--gold:#ffd34d;--glass:rgba(22,10,40,.84);--line:rgba(255,255,255,.13)}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;overflow-x:clip}
-body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.8 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Hiragino Sans","Yu Gothic",system-ui,sans-serif;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(70% 45% at 85% 0%,rgba(255,45,122,.32),transparent 70%),radial-gradient(60% 50% at 0% 30%,rgba(139,92,255,.26),transparent 70%),radial-gradient(50% 40% at 50% 100%,rgba(41,227,255,.12),transparent 70%),var(--bg)}
-body:after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:7px 7px;pointer-events:none}
+:root{--bg:#0b0614;--txt:#e4dbf5;--mute:#b9acd6;--dim:#8a7aa8;--pink:#ff2d7a;--pink2:#ff79b0;--cyan:#29e3ff;--gold:#ffd34d;--violet:#8b5cff;--glass:rgba(22,10,40,.78);--line:rgba(255,255,255,.13);--beat:.5s;color-scheme:dark}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;overflow-x:clip;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--txt);font:15.5px/1.7 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Hiragino Sans","Yu Gothic",system-ui,sans-serif;overflow-x:hidden}
+[lang=ko] body{word-break:keep-all}
+[lang=ja] body{word-break:auto-phrase;line-break:strict}   /* 일본어: 낱말 덩어리로 줄바꿈 (한 글자만 다음 줄로 가지 않게) */
 a{color:var(--pink2)}
-.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:12px;padding:10px 16px;background:linear-gradient(rgba(11,6,20,.96),rgba(11,6,20,.82));backdrop-filter:blur(8px);border-bottom:2px solid var(--pink)}
-.top img{height:42px;display:block}.top .sp{flex:1}
-.chips{display:flex;gap:6px;flex-wrap:wrap}
-.chip{border:0;cursor:pointer;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(255,255,255,.07);padding:9px 13px;transform:skewX(-10deg);text-decoration:none;display:inline-block}
+img,video{max-width:100%}
+/* 네온 배경 (움직임 C) */
+.neon{position:fixed;inset:0;z-index:-2;background:radial-gradient(70% 45% at 85% 0%,rgba(255,45,122,.30),transparent 70%),radial-gradient(60% 50% at 0% 30%,rgba(139,92,255,.24),transparent 70%),radial-gradient(50% 40% at 50% 100%,rgba(41,227,255,.12),transparent 70%),var(--bg)}
+.neon:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:7px 7px}
+.streaks{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.streaks i{position:absolute;width:2px;height:40vh;top:-40vh;background:linear-gradient(transparent,var(--c),transparent);opacity:.55;filter:drop-shadow(0 0 6px var(--c));animation:fall var(--d) linear infinite;animation-delay:var(--s)}
+@keyframes fall{to{transform:translateY(160vh)}}
+/* 위 막대 */
+.top{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;transition:background .3s}
+.top.solid{background:rgba(11,6,20,.9);backdrop-filter:blur(8px);box-shadow:0 2px 0 var(--pink)}
+.top .mini{height:30px;opacity:0;transition:opacity .3s}.top.solid .mini{opacity:1}
+.top .sp{flex:1}
+.chips{display:flex;gap:6px}
+.chip{border:0;cursor:pointer;font:700 12.5px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(11,6,20,.6);padding:9px 12px;transform:skewX(-10deg)}
 .chip>span{display:inline-block;transform:skewX(10deg)}
 .chip.on{background:var(--pink);color:#fff;box-shadow:3px 3px 0 #000}
-.wrap{max-width:820px;margin:0 auto;padding:0 16px 80px;position:relative}
-.hero{position:relative;padding:38px 0 26px;min-height:250px;overflow-x:clip;overflow-y:visible}
-.hero .art{position:absolute;right:-30px;top:-6px;height:300px;opacity:.95;pointer-events:none;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent);filter:drop-shadow(0 0 30px rgba(255,45,122,.35))}
-.tape{display:inline-block;font:400 14px/1 Anton,BHS,sans-serif;letter-spacing:.1em;color:#2b1a00;background:var(--gold) repeating-linear-gradient(-45deg,transparent 0 6px,rgba(0,0,0,.08) 6px 12px);padding:6px 12px;transform:rotate(-3deg);box-shadow:2px 2px 0 #000}
-.tape.plat{background-color:var(--cyan);color:#04121a;margin-left:6px;transform:rotate(2deg)}
-h1{position:relative;margin:14px 0 4px;font:400 clamp(40px,9vw,66px)/.98 Anton,BHS,sans-serif;font-style:italic;letter-spacing:.01em;color:#fff;text-shadow:3px 3px 0 var(--pink),0 0 24px rgba(255,45,122,.55);max-width:72%}
-.sub{position:relative;font:900 clamp(22px,4.6vw,30px)/1.2 BHS,"Hiragino Sans","Yu Gothic","Noto Sans JP",sans-serif;font-synthesis:none;color:var(--gold);text-shadow:2px 2px 0 #000;margin:6px 0 0}
-.eff{display:inline-block;margin-top:14px;font:700 13px/1 Pret,system-ui,sans-serif;color:var(--mute);background:rgba(0,0,0,.4);padding:8px 12px;border-left:3px solid var(--pink)}
-.docs{display:flex;gap:8px;margin:6px 0 22px;flex-wrap:wrap}
-.card{position:relative;background:var(--glass);margin:0 0 14px;padding:20px 20px 18px;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:inset 0 0 0 1px var(--line)}
-.card:before{content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:linear-gradient(var(--pink),transparent)}
-h2{margin:0 0 10px;font:700 17px/1.4 Pret,system-ui,sans-serif;color:#fff}
-.card p{margin:0;white-space:pre-line}
-.biz{background:rgba(43,26,0,.55);box-shadow:inset 0 0 0 1.5px var(--gold)}
-.biz:before{background:linear-gradient(var(--gold),transparent)}
-.biz dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;font-size:14.5px}
-.biz dt{color:var(--gold);font-weight:700}.biz dd{margin:0;color:var(--txt)}
-footer{margin-top:30px;padding:22px 0 0;border-top:2px solid var(--pink);display:flex;align-items:center;gap:14px;flex-wrap:wrap;color:var(--dim);font-size:13px}
-footer img{height:34px}
-[hidden]{display:none!important}
-[lang=ko]{word-break:keep-all;overflow-wrap:break-word}
-@media(max-width:560px){.hero .art{height:210px;right:-40px;opacity:.55}h1{max-width:100%}.top img{height:34px}}
-
-.land{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 16px;position:relative;overflow:hidden}
-.land .bg{position:fixed;inset:0;z-index:-3;background:url(assets/stage.webp) center/cover;opacity:.32}
-.land .logo{width:min(560px,86vw);filter:drop-shadow(0 0 40px rgba(255,45,122,.45));position:relative;z-index:2}
-.land .cast{position:absolute;bottom:0;height:min(62vh,560px);opacity:.92;z-index:1;-webkit-mask-image:linear-gradient(#000 75%,transparent);mask-image:linear-gradient(#000 75%,transparent)}
-.land .l{left:max(-60px,calc(50% - 560px))}.land .r{right:max(-60px,calc(50% - 560px))}
-.land .tag{font:400 clamp(26px,6vw,44px)/1 Anton,sans-serif;font-style:italic;color:#fff;letter-spacing:.06em;text-shadow:3px 3px 0 var(--pink);margin:18px 0 10px;position:relative;z-index:2}
-.land .line{position:relative;z-index:2;font:700 15px/1.6 Pret,system-ui,sans-serif;color:var(--txt);background:rgba(11,6,20,.7);padding:10px 16px}
-.land .soon{margin-top:22px;position:relative;z-index:2;font-size:18px}
-.stores{position:relative;z-index:2;display:flex;gap:24px 16px;flex-wrap:wrap;justify-content:center;margin-top:26px}
-.store{position:relative;display:flex;align-items:center;gap:12px;min-width:224px;padding:11px 22px 12px;text-decoration:none;transform:skewX(-10deg);color:#fff;background:var(--pink);box-shadow:4px 4px 0 #000}
+/* 첫 화면 (A) */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;padding:84px 16px 64px;overflow:hidden}
+.hero .bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.55;filter:saturate(1.15)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(rgba(11,6,20,.55),rgba(11,6,20,.25) 40%,rgba(11,6,20,.95))}
+.hero .in{display:flex;align-items:center;gap:48px;max-width:1080px;width:100%}
+.hero .copy{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;min-width:0}
+.logo{width:min(560px,88vw);filter:drop-shadow(0 0 40px rgba(255,45,122,.5));animation:beat calc(var(--beat)*2) ease-out infinite}
+@keyframes beat{0%{transform:scale(1.035)}22%{transform:scale(1)}100%{transform:scale(1)}}
+.tag{font:400 clamp(26px,5.6vw,46px)/1 Anton,sans-serif;font-style:italic;color:#fff;letter-spacing:.06em;text-shadow:3px 3px 0 var(--pink);margin:16px 0 10px}
+.line{font:700 15px/1.6 Pret,system-ui,sans-serif;color:var(--txt);background:rgba(11,6,20,.7);padding:10px 16px}
+.stores{display:flex;gap:20px 16px;flex-wrap:wrap;justify-content:center;margin-top:24px}
+.badge{display:block;line-height:0;transition:transform .15s;filter:drop-shadow(4px 4px 0 #000)}
+.badge:hover{transform:translateY(-2px)}
+.badge img{height:58px;width:auto;display:block}
+@media(max-width:420px){.badge img{height:50px}}
+.store{position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;min-width:224px;padding:11px 22px 12px;text-decoration:none;transform:skewX(-10deg);color:#fff;background:var(--pink);box-shadow:4px 4px 0 #000;transition:transform .15s}
+.store:hover{transform:skewX(-10deg) translateY(-2px);background:#ff4a8e}
 .store>*{transform:skewX(10deg)}
+.store:after{content:"";position:absolute;top:-20%;bottom:-20%;width:40%;left:-60%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 3.2s ease-in-out infinite}
+.store.ios:after{animation-delay:1.6s}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
 .store svg{width:28px;height:28px;flex:none}
 .store b{display:block;text-align:left;font:400 25px/1 Anton,sans-serif;letter-spacing:.03em}
 .store small{display:block;text-align:left;font:700 11px/1.3 Pret,system-ui,sans-serif;letter-spacing:.08em;opacity:.9}
-.store:hover{background:#ff4a8e}
-.land .mail{position:relative;z-index:2;margin-top:22px;font:700 14px/1 Pret,system-ui,sans-serif}
-@media(max-width:700px){.land .cast{height:40vh;opacity:.45}}
+.phone{flex:none;width:300px;border-radius:34px;padding:10px;background:linear-gradient(145deg,#2a1748,#120820);box-shadow:0 0 0 2px rgba(255,255,255,.12),0 0 60px rgba(255,45,122,.45),12px 12px 0 #000;display:none}
+.phone video{width:100%;aspect-ratio:9/16;height:auto;object-fit:cover;border-radius:26px;display:block}   /* 영상과 같은 9:16 — 가장자리가 잘려 알림 띠 글이 끊겼었음 */
+.cue{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:var(--mute);font:700 11px/1 Pret,system-ui,sans-serif;letter-spacing:.2em;text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:6px}
+.cue:after{content:"";width:12px;height:12px;border-right:2px solid var(--pink);border-bottom:2px solid var(--pink);transform:rotate(45deg);animation:bob 1.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px) rotate(45deg)}}
+@media(min-width:900px){.hero .bgv{display:none}.phone{display:block}.hero .copy{align-items:flex-start;text-align:left}.hero .stores{justify-content:flex-start}.hero{background:url(assets/stage.webp) center/cover}}
+/* 구간 (B) */
+section{max-width:1080px;margin:0 auto;padding:72px 16px 8px}
+.h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 6px}
+.h h2{margin:0;font:400 clamp(30px,6vw,48px)/1 Anton,BHS,sans-serif;font-style:italic;color:#fff;letter-spacing:.02em;text-shadow:3px 3px 0 var(--pink)}
+[lang=ja] .h h2{font-family:Anton,"Hiragino Sans","Yu Gothic",sans-serif;font-weight:900}
+.subh{margin:0 0 22px;color:var(--mute);font-weight:700}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat{background:var(--glass);clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,18px 100%,0 calc(100% - 18px));box-shadow:inset 0 0 0 1px var(--line);display:flex;flex-direction:column}
+.feat video{width:100%;aspect-ratio:9/12;object-fit:cover;display:block;background:#120820}
+.feat .t{padding:14px 16px 18px}
+.feat h3{margin:0 0 6px;font:400 24px/1.1 Anton,BHS,sans-serif;color:#fff;letter-spacing:.02em}
+[lang=ja] .feat h3{font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-weight:900;font-size:20px}
+.feat p{margin:0;font-size:14.5px;color:var(--txt)}
+.feat .n{display:inline-block;font:400 13px/1 Anton,sans-serif;color:#2b1a00;background:var(--gold);padding:4px 8px;transform:rotate(-3deg);box-shadow:2px 2px 0 #000;margin-bottom:8px}
+@media(max-width:760px){.feats{grid-template-columns:1fr}.feat{flex-direction:row}.feat video{width:42%;aspect-ratio:9/14}.feat .t{flex:1;min-width:0;align-self:center}}
+.rail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:thin}
+.rail>*{scroll-snap-align:start;flex:none}
+.mem{width:200px;position:relative;background:linear-gradient(180deg,color-mix(in srgb,var(--c) 35%,transparent),rgba(22,10,40,.9) 70%);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));box-shadow:inset 0 0 0 1.5px color-mix(in srgb,var(--c) 70%,transparent)}
+.mem img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;transition:transform .3s}
+.mem:hover img{transform:scale(1.05)}
+.mem .t{padding:10px 12px 14px}
+.mem b{display:block;font:400 26px/1 Anton,sans-serif;color:#fff;letter-spacing:.04em;text-shadow:2px 2px 0 var(--c)}
+.mem .i{font:700 12px/1.3 Pret,system-ui,sans-serif;color:var(--c);letter-spacing:.05em;margin:4px 0 4px}
+.mem .r{font-size:13px;color:var(--mute);line-height:1.45}
+.boss{width:260px;height:380px;position:relative;overflow:hidden;clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));box-shadow:inset 0 0 0 1.5px var(--line)}
+.boss .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.6) saturate(1.2)}
+.boss .who{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:88%;max-width:none;filter:drop-shadow(0 0 18px var(--c))}
+.boss .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 14px;background:linear-gradient(transparent,rgba(11,6,20,.92))}
+.boss .city{font:400 13px/1 Anton,sans-serif;letter-spacing:.2em;color:var(--gold)}
+.boss .nm{font:400 28px/1.05 Anton,sans-serif;color:#fff;text-shadow:2px 2px 0 var(--c);margin-top:4px}
+[lang=ja] .boss .nm{font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-weight:900;font-size:24px}
+.boss .ko{position:absolute;top:12px;right:12px;font:400 14px/1 Anton,sans-serif;color:#fff;background:var(--pink);padding:5px 9px;transform:rotate(4deg);box-shadow:2px 2px 0 #000}
+.shot{width:220px;border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line),6px 6px 0 #000}
+.shot img{display:block;width:100%;aspect-ratio:1320/2868;object-fit:cover}
+.cta{text-align:center;padding:84px 16px 40px;max-width:none}
+.cta h2{margin:0 0 4px;font:400 clamp(34px,8vw,64px)/1 Anton,BHS,sans-serif;font-style:italic;color:#fff;text-shadow:4px 4px 0 var(--pink),0 0 30px rgba(255,45,122,.6)}
+[lang=ja] .cta h2{font-family:"Hiragino Sans","Yu Gothic",sans-serif;font-weight:900}
+.cta .stores{margin-top:22px}
+footer{max-width:1080px;margin:40px auto 0;padding:22px 16px calc(28px + env(safe-area-inset-bottom,0px));border-top:2px solid var(--pink);display:flex;gap:10px 24px;flex-wrap:wrap;align-items:center;color:var(--dim);font-size:13px}
+footer img{height:30px}footer .sp{flex:1}
+footer .lk{display:flex;gap:6px 14px;flex-wrap:wrap}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+.capmode .hero{min-height:860px}.capmode .rv{opacity:1;transform:none}   /* ?shot 시안 캡처용 (긴 창에서 첫 화면이 창 높이만큼 늘어나지 않게) — 이름이 .shot(게임 화면 카드)과 겹쳐 페이지가 220px로 줄었었음 */
+@media(prefers-reduced-motion:reduce){.logo,.store:after,.streaks i,.cue:after{animation:none}.rv{opacity:1;transform:none;transition:none}}
 </style></head><body>
-<div class="land"><div class="bg"></div>
-<img class="cast l" src="assets/riff.webp" alt=""><img class="cast r" src="assets/queen.webp" alt="">
+<div class="neon"></div><div class="streaks" aria-hidden="true"></div>
+<header class="top" id="top"><img class="mini" src="assets/logo.webp" alt="PARRYTHM"><span class="sp"></span>
+<div class="chips"><button class="chip" data-lang="en"><span>EN</span></button><button class="chip" data-lang="ja"><span>日本語</span></button><button class="chip" data-lang="ko"><span>한국어</span></button></div></header>
+
+<div class="hero">
+<video class="bgv" id="hvBg" muted playsinline autoplay loop preload="metadata" poster="assets/v2/hero_en.jpg" src="assets/v2/hero_en.mp4"></video>
+<div class="in">
+<div class="copy">
 <img class="logo" src="assets/logo.webp" alt="PARRYTHM">
 <div class="tag">PARRY THE BEAT</div>
 <div class="line">Rhythm action game<br>リズムアクションゲーム<br>리듬 액션 게임</div>
-<div class="stores">
-<a class="store play" href="https://play.google.com/store/apps/details?id=com.raypick.parrythm" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5v17l14-8.5z"/></svg><span><small>ANDROID</small><b>Google Play</b></span></a>
-<a class="store ios" href="https://apps.apple.com/app/id6821534869" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="18.2" r="1" fill="currentColor"/></svg><span><small>iPHONE</small><b>App Store</b></span></a>
+<div class="stores" data-stores></div>
 </div>
-<div class="mail"><a href="mailto:support@parrythm.com">support@parrythm.com</a></div>
-</div></body></html>
+<div class="phone"><video id="hvPh" muted playsinline autoplay loop preload="metadata" poster="assets/v2/hero_en.jpg" src="assets/v2/hero_en.mp4"></video></div>
+</div>
+<a class="cue" href="#how" data-t="scroll">SCROLL</a>
+</div>
+
+<section id="how"><div class="h"><h2 data-t="sec_feat">HOW IT PLAYS</h2></div><p class="subh" data-t="sec_feat_sub"></p>
+<div class="feats">
+<div class="feat rv"><video data-v="f_parry" muted playsinline loop preload="none"></video><div class="t"><span class="n">01</span><h3 data-t="f1_t"></h3><p data-t="f1_d"></p></div></div>
+<div class="feat rv"><video data-v="f_strike" muted playsinline loop preload="none"></video><div class="t"><span class="n">02</span><h3 data-t="f2_t"></h3><p data-t="f2_d"></p></div></div>
+<div class="feat rv"><video data-v="f_tour" muted playsinline loop preload="none"></video><div class="t"><span class="n">03</span><h3 data-t="f3_t"></h3><p data-t="f3_d"></p></div></div>
+</div></section>
+
+<section><div class="h"><h2 data-t="sec_band"></h2></div><p class="subh" data-t="sec_band_sub"></p><div class="rail rv" id="band"></div></section>
+<section><div class="h"><h2 data-t="sec_boss"></h2></div><p class="subh" data-t="sec_boss_sub"></p><div class="rail rv" id="bosses"></div></section>
+<section><div class="h"><h2 data-t="sec_shots"></h2></div><div class="rail rv" id="shots"></div></section>
+
+<section class="cta rv"><h2 data-t="cta_t"></h2><div class="stores" data-stores></div></section>
+
+<footer><img src="assets/logo.webp" alt="PARRYTHM"><span>© 2026 Raypick Co., Ltd.</span><span class="sp"></span>
+<div class="lk"><span>Google Play:</span><a href="android/terms.html" data-t="terms"></a><a href="android/privacy.html" data-t="privacy"></a><a href="android/delete.html" data-t="delete"></a></div>
+<div class="lk"><span>App Store:</span><a href="ios/terms.html" data-t="terms"></a><a href="ios/privacy.html" data-t="privacy"></a></div>
+<a href="mailto:support@parrythm.com">support@parrythm.com</a></footer>
+
+<script>
+if(/[?&]shot/.test(location.search))document.documentElement.classList.add("capmode");
+const T={
+ en:{scroll:"SCROLL",sec_feat:"HOW IT PLAYS",sec_feat_sub:"The song is the attack. Parry, strike back, K.O.",
+  f1_t:"PARRY TO THE BEAT",f1_d:"The song itself is the attack. Block every hit right on the beat.",
+  f2_t:"STRIKE BACK",f2_d:"On your turn, hit back hard. Level your instrument up to Lv.5 for evolved attacks.",
+  f3_t:"WORLD TOUR",f3_d:"From Seoul to London — K.O. each city's star boss.",
+  sec_band:"MEET THE BAND",sec_band_sub:"9 members — pick your favorite and play as them.",
+  sec_boss:"STAR BOSSES",sec_boss_sub:"Every city has a star waiting for you.",sec_shots:"SCREENSHOTS",
+  cta_t:"PLAY FREE NOW",terms:"Terms",privacy:"Privacy",delete:"Delete account"},
+ ja:{scroll:"SCROLL",sec_feat:"遊び方",sec_feat_sub:"曲そのものが攻撃。パリィして、反撃して、K.O.！",
+  f1_t:"ビートでパリィ",f1_d:"曲そのものが攻撃。ビートに合わせて全部パリィ！",
+  f2_t:"反撃せよ",f2_d:"自分のターンは反撃！楽器をLv.5まで強化して進化アタック。",
+  f3_t:"ワールドツアー",f3_d:"ソウルからロンドンまで。都市ごとのスターボスをK.O.！",
+  sec_band:"メンバー",sec_band_sub:"9人のメンバーから推しを選んでプレイ。",
+  sec_boss:"スターボス",sec_boss_sub:"都市ごとにスターが待っている。",sec_shots:"ゲーム画面",
+  cta_t:"今すぐ無料でプレイ",terms:"利用規約",privacy:"プライバシー",delete:"アカウント削除"},
+ ko:{scroll:"SCROLL",sec_feat:"이렇게 플레이해요",sec_feat_sub:"노래가 곧 공격. 막고, 되받아치고, K.O.!",
+  f1_t:"비트에 맞춰 막아라",f1_d:"노래가 곧 공격. 박자에 맞춰 전부 막아내요.",
+  f2_t:"되받아쳐라",f2_d:"내 차례엔 반격! 악기를 Lv.5까지 키워 진화 공격을 터뜨려요.",
+  f3_t:"월드 투어",f3_d:"서울에서 런던까지, 도시마다 스타 보스를 K.O.!",
+  sec_band:"멤버",sec_band_sub:"멤버 9명 — 최애를 골라 함께 연주해요.",
+  sec_boss:"스타 보스",sec_boss_sub:"도시마다 스타가 기다리고 있어요.",sec_shots:"게임 화면",
+  cta_t:"지금 무료로 플레이",terms:"이용약관",privacy:"개인정보처리방침",delete:"계정 삭제"}};
+const BOSSES=[["seoul","SEOUL","queen",{en:"Crown Queen",ja:"クラウン・クイーン",ko:"크라운 퀸"},"#ff2d7a"],["tokyo","TOKYO","hanabi",{en:"Hanabi",ja:"ハナビ",ko:"하나비"},"#ff5a3c"],["la","LOS ANGELES","volt",{en:"Volt",ja:"ボルト",ko:"볼트"},"#29e3ff"],["ibiza","IBIZA","sol",{en:"Sol",ja:"ソル",ko:"솔"},"#ffb020"],["london","LONDON","bubble",{en:"Bubble",ja:"バブル",ko:"버블"},"#ff79e6"]];
+// 스토어 버튼 = 구글·애플 공식 배지 (언어마다) — 애플은 로고·아이콘만 따로 쓰면 안 되고 배지째로만 (2026-10-26 사장님 '공식 배지로')
+const STORES=l=>`<a class="badge" href="https://play.google.com/store/apps/details?id=com.raypick.parrythm" target="_blank" rel="noopener"><img src="assets/badges/google-play-${l}.png" alt="Get it on Google Play"></a><a class="badge" href="https://apps.apple.com/app/id6821534869" target="_blank" rel="noopener"><img src="assets/badges/app-store-${l}.svg" alt="Download on the App Store"></a>`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+let MEM=[];
+// 언어: ?lang=ja 처럼 주소(홍보 글 링크용) → 지난번 고른 것 → 폰 언어 → 영어
+function pick(){let l=new URLSearchParams(location.search).get("lang");if(T[l])return l;try{l=localStorage.getItem("lang")}catch(e){}if(T[l])return l;const n=(navigator.language||"en").toLowerCase();return n.startsWith("ja")?"ja":n.startsWith("ko")?"ko":"en"}
+function setLang(l){
+ document.documentElement.lang=l;try{localStorage.setItem("lang",l)}catch(e){}
+ document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("on",c.dataset.lang===l));
+ document.querySelectorAll("[data-t]").forEach(e=>{const v=T[l][e.dataset.t];if(v!=null)e.textContent=v});
+ document.querySelectorAll("[data-stores]").forEach(e=>e.innerHTML=STORES(l));
+ for(const id of["hvBg","hvPh"]){const v=document.getElementById(id),src=`assets/v2/hero_${l}.mp4`;if(!v.src.endsWith(src)){v.poster=`assets/v2/hero_${l}.jpg`;v.src=src;v.play().catch(()=>{})}}
+ document.querySelectorAll("video[data-v]").forEach(v=>{v.poster=`assets/v2/${v.dataset.v}_${l}.jpg`;v.dataset.src=`assets/v2/${v.dataset.v}_${l}.mp4`;if(v.dataset.on){v.src=v.dataset.src;v.play().catch(()=>{})}else v.removeAttribute("src")});
+ document.getElementById("band").innerHTML=MEM.map(m=>`<div class="mem" style="--c:${esc(m.color)}"><img src="assets/v2/m_${esc(m.id)}.webp" alt="${esc(m.name)}"><div class="t"><b>${esc(m.name)}</b><div class="i">${esc(m.inst[l])}</div><div class="r">${esc(m.role[l])}</div></div></div>`).join("");
+ document.getElementById("bosses").innerHTML=BOSSES.map(([c,cn,b,nm,col])=>`<div class="boss" style="--c:${col}"><img class="bg" src="assets/v2/c_${c}.webp" alt=""><img class="who" src="assets/v2/m_${b}.webp" alt="${esc(nm[l])}"><span class="ko">K.O.!</span><div class="cap"><div class="city">${cn}</div><div class="nm">${esc(nm[l])}</div></div></div>`).join("");
+ document.getElementById("shots").innerHTML=[1,2,3,4,5,6,7,8].map(i=>`<div class="shot"><img loading="lazy" src="assets/v2/shot_${l}_${i}.webp" alt=""></div>`).join("");
+}
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>setLang(c.dataset.lang));
+// 화면에 들어온 영상만 재생 (데이터 아끼기)
+const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.dataset.on="1";if(!v.getAttribute("src"))v.src=v.dataset.src;v.play().catch(()=>{})}else{delete v.dataset.on;v.pause()}}),{threshold:.35});
+document.querySelectorAll("video[data-v]").forEach(v=>io.observe(v));
+const rv=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rv.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(e=>rv.observe(e));
+const topBar=document.getElementById("top");addEventListener("scroll",()=>topBar.classList.toggle("solid",scrollY>60),{passive:true});   // 'top'은 브라우저가 이미 쓰는 이름이라 스크립트 전체가 멈췄음
+// 네온 빛줄기 (움직임 C)
+const st=document.querySelector(".streaks"),cols=["#ff2d7a","#29e3ff","#8b5cff","#ffd34d"];
+for(let i=0;i<14;i++){const e=document.createElement("i");e.style.cssText=`left:${(i*7.3+3)%100}%;--c:${cols[i%4]};--d:${4+(i*1.7)%5}s;--s:-${(i*0.9)%6}s`;st.appendChild(e)}
+fetch("assets/v2/members.json").then(r=>r.json()).then(m=>{MEM=m;setLang(pick())}).catch(()=>setLang(pick()));
+setLang(pick());
+</script></body></html>

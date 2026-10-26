@@ -1,0 +1,137 @@
+[
+ {
+  "id": "riff",
+  "name": "RIFF",
+  "color": "#ff2d7a",
+  "inst": {
+   "ko": "기타",
+   "en": "Guitar",
+   "ja": "ギター"
+  },
+  "role": {
+   "ko": "거침없는 리더 · 기타 도끼",
+   "en": "Fearless leader · guitar axe",
+   "ja": "恐れ知らずのリーダー・ギターアックス"
+  }
+ },
+ {
+  "id": "beat",
+  "name": "BEAT",
+  "color": "#29e3ff",
+  "inst": {
+   "ko": "드럼",
+   "en": "Drums",
+   "ja": "ドラム"
+  },
+  "role": {
+   "ko": "분위기 메이커 · 드럼스틱",
+   "en": "Mood maker · drumsticks",
+   "ja": "ムードメーカー・ドラムスティック"
+  }
+ },
+ {
+  "id": "luna",
+  "name": "LUNA",
+  "color": "#a46bff",
+  "inst": {
+   "ko": "베이스",
+   "en": "Bass",
+   "ja": "ベース"
+  },
+  "role": {
+   "ko": "차가운 천재 · 베이스 창",
+   "en": "Cool genius · bass spear",
+   "ja": "クールな天才・ベースの槍"
+  }
+ },
+ {
+  "id": "nova",
+  "name": "NOVA",
+  "color": "#ffd34d",
+  "inst": {
+   "ko": "키타",
+   "en": "Keytar",
+   "ja": "キーター"
+  },
+  "role": {
+   "ko": "화려한 쇼맨 · 키타 레이저",
+   "en": "Flashy showman · keytar laser",
+   "ja": "華麗なショーマン・キーターレーザー"
+  }
+ },
+ {
+  "id": "queen",
+  "name": "QUEEN",
+  "color": "#ff2d7a",
+  "inst": {
+   "ko": "보컬",
+   "en": "Vocals",
+   "ja": "ボーカル"
+  },
+  "role": {
+   "ko": "왕관 쓴 디바 · 마이크 스탠드",
+   "en": "Crowned diva · mic stand",
+   "ja": "王冠のディーヴァ・マイクスタンド"
+  }
+ },
+ {
+  "id": "hanabi",
+  "name": "HANABI",
+  "color": "#ff5a3c",
+  "inst": {
+   "ko": "부채",
+   "en": "Fans",
+   "ja": "扇子"
+  },
+  "role": {
+   "ko": "축제의 불꽃 · 쌍부채",
+   "en": "Festival fireworks · twin fans",
+   "ja": "祭りの花火・二刀扇"
+  }
+ },
+ {
+  "id": "volt",
+  "name": "VOLT",
+  "color": "#29e3ff",
+  "inst": {
+   "ko": "일렉기타",
+   "en": "Electric guitar",
+   "ja": "エレキギター"
+  },
+  "role": {
+   "ko": "사이버 록스타 · 별 기타",
+   "en": "Cyber rock star · star guitar",
+   "ja": "サイバーロックスター・星のギター"
+  }
+ },
+ {
+  "id": "sol",
+  "name": "SOL",
+  "color": "#ffb020",
+  "inst": {
+   "ko": "키타",
+   "en": "Keytar",
+   "ja": "キーター"
+  },
+  "role": {
+   "ko": "선셋 디바 · 태양 키타",
+   "en": "Sunset diva · Sun keytar",
+   "ja": "サンセットの歌姫・太陽キーター"
+  }
+ },
+ {
+  "id": "bubble",
+  "name": "BUBBLE",
+  "color": "#ff79e6",
+  "inst": {
+   "ko": "보컬",
+   "en": "Vocals",
+   "ja": "ボーカル"
+  },
+  "role": {
+   "ko": "하이퍼팝 아이돌 · 버블껌 마이크",
+   "en": "Hyperpop idol · Bubblegum mic",
+   "ja": "ハイパーポップアイドル・バブルガムマイク"
+  }
+ }
+]
